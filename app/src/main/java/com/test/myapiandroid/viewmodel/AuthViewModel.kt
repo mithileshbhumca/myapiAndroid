@@ -8,11 +8,11 @@ import com.test.myapiandroid.data.network.RetrofitClient
 import com.test.myapiandroid.data.storage.SecureStorage
 import kotlinx.coroutines.launch
 
-class AuthViewModel(application: Application) : AndroidViewModel(application) {
+open class AuthViewModel(application: Application) : AndroidViewModel(application) {
     private val storage = SecureStorage(application.applicationContext)
     private val api = RetrofitClient.apiService
 
-    fun login(email: String, password: String, onResult: (Boolean, String) -> Unit) {
+    open fun login(email: String, password: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
             try {
                 val resp = api.login(mapOf("email" to email, "password" to password))
@@ -30,7 +30,7 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun signup(name: String, email: String, password: String, onResult: (Boolean, String) -> Unit) {
+    open fun signup(name: String, email: String, password: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
             try {
                 val resp = api.signup(mapOf("name" to name, "email" to email, "password" to password))
