@@ -50,7 +50,7 @@ android-app/
 private const val BASE_URL = "http://10.0.2.2:5000/" // For Emulator
 3. Run app in Android Studio.
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
 Kotlin + MVVM + Jetpack Compose
 
@@ -60,7 +60,7 @@ SharedPreferences (SecureStorage)
 
 Coroutine support for API calls
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Use EncryptedSharedPreferences for tokens
 
